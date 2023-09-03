@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Discharge Prediction</title>
+</head>
+<body>
+    <h1>Select a USGS Site Number for Discharge Prediction, Valid until the end of 2023</h1>
+    
+    <form method="post">
+        
+        <select name="user_input">
+            
+            {% for column in columns %}
+                <option value="{{ column }}">{{ column }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+
+    
+    {% if result != None %}
+        <h2>{{ result }}</h2>
+    {% endif %}
+</body>
+</html>
